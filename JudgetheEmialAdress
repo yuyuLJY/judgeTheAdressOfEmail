@@ -1,0 +1,24 @@
+package com.immoc;
+import java.util.Scanner;
+/*
+ 判断邮箱是否正确，要求如下：
+ （1）必须出现@和. 并且@在前,不出现在首字母
+ （2）@后边必须为163.com(后缀名的判断)
+ */
+public class Judge {
+	public static void main(String[] args) {
+		System.out.println("请输入163邮箱");
+		Scanner in = new Scanner (System.in);
+		String email = in.next();
+		int index1 = email.indexOf('@');//获取@的位置，如果没有找到返回-1
+		int index2 = email.indexOf('.');//获取'.'的位置
+		String str = email.substring(index1+1, email.length());
+		if (index1!=-1 && index1!=0 && index1<index2 && str.equals("163.com")) {
+			System.out.println("正确");
+		}
+		else {
+			System.out.println("不正确");
+		}
+	}
+
+}
